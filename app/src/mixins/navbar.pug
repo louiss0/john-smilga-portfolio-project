@@ -1,0 +1,13 @@
+include ../mixins/container.pug
+
+mixin navbar
+    nav.text-gray-50.bg-gray-900
+            +container("w-9/12 py-4 h-24 text-center")
+                ul(class="flex gap-8 h-full items-center") 
+                    li 
+
+                        a(href="/") Home
+
+                    li 
+                
+                        a(href="/src/pages/about.html") About
