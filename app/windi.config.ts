@@ -5,5 +5,14 @@ export default defineConfig({
         prefix: "w",
         
     },
-    
+    theme: {
+        extend:{
+            fontFamily: {
+            primary: ['Roboto', 'sans-serif'],
+            secondary:[ 'Open Sans', 'sans-serif']
+        },
+        
+        }
+        
+    }
 })

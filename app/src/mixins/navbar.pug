@@ -1,13 +1,37 @@
 include ../mixins/container.pug
+include ../mixins/bars-icon.pug
 
 mixin navbar
-    nav.text-gray-50.bg-gray-900
-            +container("w-9/12 py-4 h-24 text-center")
-                ul(class="flex gap-8 h-full items-center") 
-                    li 
-
-                        a(href="/") Home
-
-                    li 
+    
+    
+    nav#nav.p-4.bg-amber-50.grid.items-center.transition.transform.duration-150.ease-in
+            
+            +container("w-9/12 h-20")(
+                w:md="grid grid-cols-2 items-center"
+            )
                 
-                        a(href="/src/pages/about.html") About
+                .grid.grid-cols-2
+                    
+                    img.object-contain(src=`/images/logo.svg`, alt="navbar logo")
+
+                    button#nav-btn.text-amber-500.justify-self-end.h-20(
+                        w:md="hidden"
+                    )
+                        
+                        +barsIcon
+                
+
+                ul(
+                    class="hidden"
+                    w:md="grid grid-cols-4 justify-items-center gap-x-8"
+                ) 
+                    
+                    for  link in [ 'home','about', 'contacts', 'projects']
+                    
+                    
+                        li.capitalize.font-bold 
+                    
+                            a.transition.duration-150.ease-in(
+                                href=`/pages/${link}.html`
+                                w:hover="text-amber-500"
+                            ) #{link} 

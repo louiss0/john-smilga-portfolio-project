@@ -20,8 +20,8 @@ export default defineConfig({
     },
   },  
   plugins: [
-    WindiCSS(),
     pugPlugin(),
+    WindiCSS(),
     
   ],
 })

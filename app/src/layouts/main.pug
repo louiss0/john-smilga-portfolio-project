@@ -1,9 +1,77 @@
 
 include ../mixins/navbar.pug
+include ../mixins/close-icon.pug
+
+include ../mixins/twitter-icon.pug
+include ../mixins/facebook-icon.pug
+include ../mixins/instagram-icon.pug
+include ../mixins/behance-icon.pug
+include ../mixins/squarespace-icon.pug
 
 
 header 
     +navbar
+    
+    aside#backdrop(class="top-0 bottom-0 left-0 right-0 fixed absolute bg-gray-500/40 hidden") 
+        .bg-gray-300#sidebar(class="pt-2 py-6 w-6/12 lg:w-9/12 h-full transition-transform duration-200 ease-in-out flex flex-col justify-between -translate-x-full")
+            
+            .flex.justify-end.px-2
+            
+                button#close-btn.w-20.h-20.text-red-500(
+                    class="transition-colors duration-200 ease-in"
+                    w:hover="text-red-300"
+                )
+                    
+                    +closeIcon
+            ul.text-gray-500 
+                for link in ['home','about', 'contacts', 'projects']
+                    
+                    li.capitalize.text-xl.py-6.px-3
+                        
+                        a(href=`/pages/${link}.html`) #{link}
+            
+            ul.flex.justify-around.text-gray-900
+                
+                li.w-6.h-9
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.twitter.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +twitterIcon
+                
+                li.w-6.h-9
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.facebook.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +facebookIcon
+                
+                li.w-6.h-9
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.behance.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +behanceIcon
+                
+                li.w-6.h-9
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.squarespace.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +squarespaceIcon
+                
+                li.w-6.h-9
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.instagram.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +instagramIcon
+                
 
 main
     block main

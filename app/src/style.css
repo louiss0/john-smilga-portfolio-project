@@ -1,13 +1,37 @@
 
 
+/** 
+    - primary-1 = amber-900 
+    - primary-2 = amber-800 
+    - primary-3 = amber-700 
+    - primary-4 = amber-600 
+    - primary-5 = amber-500 
+    - primary-6 = amber-400 
+    - primary-7 = amber-300 
+    - primary-8 = amber-200 
+    - primary-9 = amber-100
+    - primary-10 = amber-50
+    
+    - grey-1 = gray-900
+    - grey-2 = gray-800
+    - grey-3 = gray-700
+    - grey-4 = gray-600
+    - grey-5 = gray-500
+    - grey-6 = gray-400
+    - grey-7 = gray-300
+    - grey-8 = gray-200
+    - grey-9 = gray-100
+    - grey-10 = gray-50
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
-    @apply bg-light-50 text-center text-dark-900 leading-tight; 
+    @apply bg-light-50 text-center text-dark-900 leading-tight font-secondary; 
 }
 
 
 h1,h2,h3,h4,h5 h6{
-    @apply capitalize tracking-wide;
+    @apply capitalize tracking-wide ;
 }
 
 h1 {
