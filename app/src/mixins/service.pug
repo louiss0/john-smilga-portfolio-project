@@ -1,0 +1,26 @@
+include ./fancy-underline.pug
+
+mixin service(title)
+
+    .py-12.px-6.bg-light-50.rounded-sm(
+        class=`flex flex-col items-center
+        transition-colors duration-200 ease-in group`
+        w:hover="bg-amber-300"
+    )
+        .w-8.h-8(class="group-hover:text-amber-50")
+            if block 
+                
+                block 
+            
+            else 
+                p.text-red-600 No Icon to display here
+        
+        .m-2
+
+        .text-md.font-bold.capitalize #{title}
+        
+        +fancyUnderline('bg-amber-300 group-hover:bg-amber-50 transition-colors duration-200 ease-in')
+
+        .m-1
+
+        p(class="group-hover:text-amber-50 transition-colors duration-300 ease-in") Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, adipisci. Quibusdam reprehenderit repudiandae fuga eos quod consectetur amet, enim aut?

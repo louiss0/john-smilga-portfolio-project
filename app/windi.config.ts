@@ -10,9 +10,13 @@ export default defineConfig({
             fontFamily: {
             primary: ['Roboto', 'sans-serif'],
             secondary:[ 'Open Sans', 'sans-serif']
-        },
+            },
+            content: {
+                blank: ["''"]
+            }
         
         }
+
         
     }
 })

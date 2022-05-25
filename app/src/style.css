@@ -61,3 +61,62 @@ p{
 svg {
     @apply w-full h-full fill-current;
 }
+
+
+
+
+.xl-two-by-two-200px-grid{
+    @apply  xl:grid-rows-[200px,200px];
+}
+
+
+.clip-path-message {
+    
+    clip-path: polygon(
+    0% 0%, 
+    100% 0%, 
+    100% 75%, 
+    75% 75%, 
+    75% 100%, 
+    50% 75%, 
+    0% 75%
+    );
+}
+
+.clip-path-pentagon{
+    
+clip-path: polygon(
+50% 0%, 
+100% 15%, 
+90% 100%, 
+10% 100%, 
+0 15%
+);
+}
+
+progress[for="skill-level"] {
+    
+    @apply appearance-none w-5/6 h-3 ; 
+}
+
+progress[for="skill-level"]::-webkit-progress-bar, 
+progress[for="skill-level"]::-moz-progress-bar {
+    @apply bg-amber-50 rounded-full; 
+}
+
+ progress[for="skill-level"]::-webkit-progress-value {
+    
+    @apply bg-amber-400 rounded-full; 
+}
+
+article[data-timeline-item]:nth-child(odd) span[data-timeline-number]{
+
+    @apply right-0 translate-x-1/2;
+}
+
+article[data-timeline-item]:nth-child(even) span[data-timeline-number]{
+
+    @apply left-0 -translate-x-1/2;
+}
+
+

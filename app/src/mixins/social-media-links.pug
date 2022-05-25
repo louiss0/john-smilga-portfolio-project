@@ -1,0 +1,43 @@
+mixin socialMediaLinks(extraClasses)
+
+    ul.flex.justify-around.text-gray-900(class=extraClasses)
+                
+                li
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.twitter.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +twitterIcon
+                
+                li
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.facebook.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +facebookIcon
+                
+                li
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.behance.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +behanceIcon
+                
+                li
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.squarespace.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +squarespaceIcon
+                
+                li
+                    a(class="transition-colors duration-300 ease-in"
+                        href="https://www.instagram.com"
+                        w:hover="text-gray-500"
+                    )
+
+                        +instagramIcon

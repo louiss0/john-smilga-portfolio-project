@@ -1,7 +1,11 @@
 
 include ../mixins/navbar.pug
-include ../mixins/close-icon.pug
+include ../mixins/container.pug
+include ../mixins/fancy-underline.pug
+include ../mixins/social-media-links.pug
+include ../mixins/base-button.pug
 
+include ../mixins/close-icon.pug
 include ../mixins/twitter-icon.pug
 include ../mixins/facebook-icon.pug
 include ../mixins/instagram-icon.pug
@@ -12,8 +16,12 @@ include ../mixins/squarespace-icon.pug
 header 
     +navbar
     
-    aside#backdrop(class="top-0 bottom-0 left-0 right-0 fixed absolute bg-gray-500/40 hidden") 
-        .bg-gray-300#sidebar(class="pt-2 py-6 w-6/12 lg:w-9/12 h-full transition-transform duration-200 ease-in-out flex flex-col justify-between -translate-x-full")
+    aside#backdrop(
+        class="top-0 bottom-0 left-0 right-0 fixed absolute  bg-gray-500/40 hidden z-20") 
+
+        .bg-gray-300#sidebar(
+            class="pt-2 py-6 w-6/12 lg:w-9/12 h-full transition-transform duration-200 delay-200 ease-in-out flex flex-col justify-between transform -translate-x-full"
+            )
             
             .flex.justify-end.px-2
             
@@ -23,60 +31,70 @@ header
                 )
                     
                     +closeIcon
+
             ul.text-gray-500 
-                for link in ['home','about', 'contacts', 'projects']
+
+                li.capitalize.text-xl.py-6.px-3
+                        
+                    a(href='/') Home
+                
+                for link in ['about', 'contact', 'projects']
                     
+
+
                     li.capitalize.text-xl.py-6.px-3
                         
                         a(href=`/pages/${link}.html`) #{link}
             
-            ul.flex.justify-around.text-gray-900
-                
-                li.w-6.h-9
-                    a(class="transition-colors duration-300 ease-in"
-                        href="https://www.twitter.com"
-                        w:hover="text-gray-500"
-                    )
+            +socialMediaLinks("children:w-5 children:h-9")
 
-                        +twitterIcon
-                
-                li.w-6.h-9
-                    a(class="transition-colors duration-300 ease-in"
-                        href="https://www.facebook.com"
-                        w:hover="text-gray-500"
-                    )
+            
+    .bg-amber-50.py-10
+        
+        +container('min-h-screen grid place-items-center lg:grid-cols-2')
+            
+            article 
+            
+                +fancyUnderline("ml-0")
+            
+                h1.mb-3 Hi I'm John
 
-                        +facebookIcon
-                
-                li.w-6.h-9
-                    a(class="transition-colors duration-300 ease-in"
-                        href="https://www.behance.com"
-                        w:hover="text-gray-500"
-                    )
+                .text-lg.capitalize.text-gray-500.mb-2 freelance mobile and web & UI/UX designer
 
-                        +behanceIcon
+                +baseButton("Hire Me", "/pages/contact.html", "mb-6")
                 
-                li.w-6.h-9
-                    a(class="transition-colors duration-300 ease-in"
-                        href="https://www.squarespace.com"
-                        w:hover="text-gray-500"
-                    )
+                
+                +socialMediaLinks("children:w-6 children:h-6")
 
-                        +squarespaceIcon
+            
+            figure(
+                class="hidden relative"
+                w:lg="flex" 
+                w:lg:before="content-blank h-full w-full -top-5 -right-10   rounded-md z-10  absolute"
+                w:lg:before:border="2 solid amber-700"
+                ) 
                 
-                li.w-6.h-9
-                    a(class="transition-colors duration-300 ease-in"
-                        href="https://www.instagram.com"
-                        w:hover="text-gray-500"
-                    )
+                img.object-cover.relative.z-20(
+                    src="/images/hero-img.jpeg", 
+                    alt="John Doe")
+                
 
-                        +instagramIcon
-                
 
 main
     block main
 
-footer
+footer.bg-gray-900.grid.place-items-center.p-8
+
+    +socialMediaLinks("children:w-6 children:h-6 gap-12 mb-12 text-amber-200")
+
+    p.text-amber-100 
+        span &copy; 
+        
+        time#date 
+        
+        span  Shelton louis all rights reserved
+
+    
 
 
 

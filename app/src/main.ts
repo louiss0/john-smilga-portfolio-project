@@ -39,11 +39,17 @@ const sidebar = backdrop.querySelector(IDsClassesAndElements.SIDEBAR);
 });
 // show sidebar
 navBtn.addEventListener("click", function () {
-  sidebar?.classList.add(IDsClassesAndElements.HIDDEN);
+
+  backdrop?.classList.remove(IDsClassesAndElements.HIDDEN);
+
+  sidebar?.classList.remove(IDsClassesAndElements.NEG_TRANSLATE_X_FULL)
+
 });
 
 closeBtn.addEventListener("click", function () {
-  sidebar?.classList.remove(IDsClassesAndElements.HIDDEN);
+  backdrop?.classList.add(IDsClassesAndElements.HIDDEN);
+  sidebar?.classList.add(IDsClassesAndElements.NEG_TRANSLATE_X_FULL)
+
 });
 // set year
     date.innerHTML = new Date().getFullYear().toString();

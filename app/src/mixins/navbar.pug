@@ -4,7 +4,7 @@ include ../mixins/bars-icon.pug
 mixin navbar
     
     
-    nav#nav.p-4.bg-amber-50.grid.items-center.transition.transform.duration-150.ease-in
+    nav#nav.p-4.bg-amber-50.grid.items-center.z-50.w-full
             
             +container("w-9/12 h-20")(
                 w:md="grid grid-cols-2 items-center"
@@ -14,7 +14,7 @@ mixin navbar
                     
                     img.object-contain(src=`/images/logo.svg`, alt="navbar logo")
 
-                    button#nav-btn.text-amber-500.justify-self-end.h-20(
+                    button#nav-btn.text-amber-500.justify-self-end.h-16(
                         w:md="hidden"
                     )
                         
@@ -25,8 +25,14 @@ mixin navbar
                     class="hidden"
                     w:md="grid grid-cols-4 justify-items-center gap-x-8"
                 ) 
+                    li.capitalize.font-bold 
                     
-                    for  link in [ 'home','about', 'contacts', 'projects']
+                        a.transition.duration-150.ease-in(
+                            href="/"
+                            w:hover="text-amber-500"
+                        ) Home
+                    
+                    for  link in [ 'about', 'contact', 'projects']
                     
                     
                         li.capitalize.font-bold 
