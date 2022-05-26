@@ -17,6 +17,9 @@ const { body } = document
 
 const numberOfPixelsDownIntoThePageRequiredToTriggerTheScroll = 80;
 
+let openSidebarInterval: number
+
+const numberOfSecondsBeforeTheActivationOfTheFunctionThatRemovesTranslateXFromSidebar=250 
 
 const navbar = body.querySelector(IDsClassesAndElements.NAVBAR);
 const navBtn = body.querySelector(IDsClassesAndElements.NAV_BTN);
@@ -30,7 +33,9 @@ if (navbar && navBtn && closeBtn && backdrop && date) {
 
 const sidebar = backdrop.querySelector(IDsClassesAndElements.SIDEBAR);
   
-    window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", function () {
+  
+  
   if (window.pageYOffset > numberOfPixelsDownIntoThePageRequiredToTriggerTheScroll) {
     navbar.classList.add(IDsClassesAndElements.FIXED);
   } else {
@@ -42,13 +47,22 @@ navBtn.addEventListener("click", function () {
 
   backdrop?.classList.remove(IDsClassesAndElements.HIDDEN);
 
-  sidebar?.classList.remove(IDsClassesAndElements.NEG_TRANSLATE_X_FULL)
+  openSidebarInterval = setTimeout(() => {
+    sidebar?.classList.remove(IDsClassesAndElements.NEG_TRANSLATE_X_FULL)
+    
+  }, numberOfSecondsBeforeTheActivationOfTheFunctionThatRemovesTranslateXFromSidebar)
 
 });
 
 closeBtn.addEventListener("click", function () {
-  backdrop?.classList.add(IDsClassesAndElements.HIDDEN);
+  
   sidebar?.classList.add(IDsClassesAndElements.NEG_TRANSLATE_X_FULL)
+  
+  clearInterval(openSidebarInterval)
+  
+  backdrop?.classList.add(IDsClassesAndElements.HIDDEN);
+  
+
 
 });
 // set year
@@ -56,15 +70,12 @@ closeBtn.addEventListener("click", function () {
 
 } else {
 
-  console.error(
-    `one of these elements doesnt have an id  ${JSON.stringify({
-      navBtn,
-      navbar,
-      closeBtn,
-      backdrop,
-      date
-    })} `
-  )
+  console.error(`
+  You dont have an element with one of these id's on the page
+    ${IDsClassesAndElements.NAVBAR}, ${IDsClassesAndElements.CLOSE_BTN},
+    ${IDsClassesAndElements.DATE},${IDsClassesAndElements.NAV_BTN},
+    ${IDsClassesAndElements.SIDEBAR}
+  `)
 }
 
 

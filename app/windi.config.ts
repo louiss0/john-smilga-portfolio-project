@@ -5,6 +5,7 @@ export default defineConfig({
         prefix: "w",
         
     },
+    safelist:["fixed", ],
     theme: {
         extend:{
             fontFamily: {

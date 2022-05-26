@@ -126,9 +126,40 @@ mixin card(blogImageLink, title, authorImageLink, minuteReadDescription)
             +baseButton("Read more", null)
             
 
+block header 
+    .bg-amber-50.py-10(aria-label="hero")
+        
+        +container('min-h-screen grid place-items-center lg:grid-cols-2')
+            
+            article 
+            
+                +fancyUnderline("ml-0")
+            
+                h1.mb-3 Hi I'm John
+
+                .text-lg.capitalize.text-gray-500.mb-2 freelance mobile and web & UI/UX designer
+
+                +baseButton("Hire Me", "/pages/contact.html", "mb-6")
+                
+                
+                +socialMediaLinks("children:w-6 children:h-6")
+
+            
+            figure(
+                class="hidden relative"
+                w:lg="flex" 
+                w:lg:before="content-blank h-full w-full -top-5 -right-10   rounded-md z-10  absolute"
+                w:lg:before:border="2 solid amber-700"
+                ) 
+                
+                img.object-cover.relative.z-20(
+                    src="/images/hero-img.jpeg", 
+                    alt="John Doe")
+
 
 block main
-    
+                    
+
 
     section.py-16.px-4(aria-labelledby="about")
         

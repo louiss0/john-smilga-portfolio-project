@@ -1,0 +1,28 @@
+extends ./main.pug
+
+include ../mixins/container
+include ../mixins/fancy-underline
+
+block main 
+
+    
+        .py-8.bg-amber-200
+           
+            +container("min-h-96")
+    
+                h1 
+                    .mb-4 contact me
+                    
+                    +fancyUnderline("w-24")
+
+                p
+                    | If you are looking to get ahold of me, you can send me an email at &nbsp;
+                    
+                    a(href="mailto:email@email.com") @your_email
+
+                p
+                    | You can also reach me on Twitter at &nbsp;
+                    
+                    a(href="https://www.twitter.com") @your_social_media 
+
+

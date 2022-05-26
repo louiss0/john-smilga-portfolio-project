@@ -1,6 +1,23 @@
 extends ./main.pug
 
 
-block main 
-   
-    h1 This is the about page
+include ../mixins/fancy-underline
+include ../mixins/container
+
+block main
+
+        .py-16.bg-amber-50
+            +container('h-80')
+
+                h1.mb-2
+                    span About me
+
+                    +fancyUnderline("w-24")
+
+                p
+                    | Hello, I am John Doe and I am a web developer. I live and work in somewhere warm. I spend most of my day, experimenting with HTML, CSS and JavaScript (and its endless list of frameworks). I enjoy coding and the challenge of learning something new everyday. You can also find me at youtube channel
+                    a(href="https://www.youtube.com/channel/UCMZFwxv5l-XtKi693qMJptA") coding addict
+
+
+
+

@@ -6,7 +6,7 @@ mixin navbar
     
     nav#nav.p-4.bg-amber-50.grid.items-center.z-50.w-full
             
-            +container("w-9/12 h-20")(
+            +container("w-9/12 min-h-20")(
                 w:md="grid grid-cols-2 items-center"
             )
                 
@@ -30,6 +30,7 @@ mixin navbar
                         a.transition.duration-150.ease-in(
                             href="/"
                             w:hover="text-amber-500"
+                            w:visited="text-amber-300"
                         ) Home
                     
                     for  link in [ 'about', 'contact', 'projects']
@@ -40,4 +41,5 @@ mixin navbar
                             a.transition.duration-150.ease-in(
                                 href=`/pages/${link}.html`
                                 w:hover="text-amber-500"
+                            w:visited="text-amber-300"
                             ) #{link} 
