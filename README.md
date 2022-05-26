@@ -68,7 +68,10 @@ export default defineConfig({
 | Folder  | Files                                                         |
 | ------- | ------------------------------------------------------------- |
 | app     | package.json, package-lock.json, tsconfig.json vite.config.ts |
-| layouts | main.pug, home.pug                                            |
+| layouts | main.pug, home.pug projects.pug contact.pug about.pug         |
 | mixins  | navbar.pug, container.pug                                     |
 | src     | main.ts, style.css                                            |
-| pages   | about.html                                                    |
+| pages   | projects.html contact.html about.html                         |
+
+> [!Note]
+> There are more mixins then specified this table can't conatain all of them. The dist folder was created as well
